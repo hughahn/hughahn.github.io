@@ -3,17 +3,17 @@ email: hugh.hg.ahn@gmail.com
 permalink: /:year/:month/:day/:title/
 google_analytics: 
 
-title: Trophy
-description: 
+title: SW편한세상
+description: SW편한세상 기술 블로그
 url: "hughahn.github.io"
 baseurl: ""
 twitter_username: 
-default_img: 
+default_img: /assets/images/Mickey Mouse_PC.jpg
 
 # Profile settings
 name: 
-profile_img: 
-profile: 
+profile_img: /assets/images/Hugh.jpg
+profile: Hugh Ahn
 social:
   github: 
 
