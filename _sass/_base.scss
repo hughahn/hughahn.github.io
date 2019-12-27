@@ -1,9 +1,10 @@
 /**
  * Base Variables
  */
-$font-header: 'Space Mono', monospace;
-$font-body: 'Inconsolata', monospace;
-$font-post: 'Lora', serif;
+$font-header: 'Jua', 'Malgun Gothic';
+$font-body: 'Jua', 'Malgun Gothic';
+$font-post: 'Noto Serif KR', 'Malgun Gothic';
+$font-code: 'Consolas', 'Courier Prime';
 
 $color-alpha: #9f8f68;
 $color-alpha--light: #f5f3ef;
@@ -125,11 +126,15 @@ img {
 }
 
 blockquote {
-  margin: 2em 0;
-
   font-family: $font-header;
   font-weight: 700;
   font-size: 1.25em;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-left: 15px;
+  border-left: 5px solid #ccc;  
 }
 
 cite {
@@ -157,4 +162,8 @@ ol, ul {
   color: $color-white;
   background-color: $color-alpha;
   text-shadow: none;
+}
+
+code {
+  font-family: $font-code;
 }
