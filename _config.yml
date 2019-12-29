@@ -1,19 +1,20 @@
 # Site/SEO settings
-email: hugh.hg.ahn@gmail.com
+email: "hugh.hg.ahn@gmail.com"
 permalink: /:year/:month/:day/:title/
 google_analytics: 
 
-title: SW편한세상
-description: SW편한세상 기술 블로그
+title: "SW편한세상"
+description: "SW편한세상 기술 블로그"
 url: "hughahn.github.io"
 baseurl: ""
 twitter_username: 
-default_img: /assets/images/Mickey Mouse_PC.jpg
+default_img: "/assets/images/background.jpg"
 
 # Profile settings
-name: 
-profile_img: /assets/images/Hugh.jpg
-profile: Hugh Ahn
+name: "Hugh Ahn"
+profile_img: "/assets/images/profile_hugh.jpg"
+profile: "Front-End 및 Back-End에 관심이 많고, Spring Boot를 좋아합니다."
+
 social:
   github: 
 

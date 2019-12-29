@@ -1,0 +1,126 @@
+---
+layout: post
+title: "Windows 환경에서 Jekyll 테마 GitHub Page에 올리는 방법"
+date: 2019-12-27
+categories:
+  - Jekyll
+description:
+image: /assets/images/background.jpg
+image-sm: /assets/images/background.jpg
+---
+Windows 환경에서 Jekyll 테마 GitHub Page에 올리는 방법
+
+[GitHub Page](https://pages.github.com/){:target="_blank"}에서는 개인ID로 `github.io` 도메인을 만들 수 있습니다.  
+또한 `Static Page Generator` (Jekyll, Hugo, Hexo 등)을 지원하기 때문에 `Jekyll` 등에서 제공하는 테마를 입힐 수 있죠.  
+바로 지금 보고계신 [Trophy](http://jekyllthemes.org/themes/trophy/){:target="_blank"} 테마도 `Jekyll`테마 중 일부입니다.
+
+본 Posting에서는 `GitHub Page + Jekyll + Ruby + NodeJS`를 이용하여 블로그를 생성해보겠습니다.
+<br/>
+<br/>
+### GitHub Page 만들기
+***
+`GitHub Page`를 만드는 것은 사실 매우 쉽습니다.  
+GitHub에서 Repository를 생성할 때, 
+- Repository를 **Public**으로 만들 것
+- Repository Name을 **\<본인ID>.github.io**로 만들 것
+
+저도 처음엔 `<본인ID>`을 아무 Keyword를 입력하여 만들었더니 일반 GitHub Repository로 인식하여 만들어졌습니다. 위에 두가지만 기억하셔서 Repository를 만드시면 됩니다.
+
+위 내용은 [https://pages.github.com](https://pages.github.com/){:target="_blank"} 에 정리가 잘 되어 있으니 따라 하시면 됩니다.
+<br/>
+<br/>
+### Jekyll 테마 고르기
+***
+Jekyll는 Static Page Generator의 한 종류로, GitHub Page에서는 Jekyll을 공식적으로 지원하고 있습니다.  
+아래 사진처럼 말이죠.
+
+![GitHub Jekyll 지원](/assets/images/2019-12-27-jekyll/image1.png)
+
+사실 Jekyll 사용 방법도 이 [Blogging with Jekyll](https://help.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll){:target="_blank"}에 정리가 되어있습니다. Official 가이드죠.
+
+이 블로그에 사용된 테마는 [Trophy](http://jekyllthemes.org/themes/trophy/)라는 테마입니다.
+
+보통 테마가 저장된 GitHub Repository에 `README.md`를 보시면, 설정을 어떻게 해야 하는지 가이드가 되어 있습니다.
+
+Jekyll 테마는 <http://jekyllthemes.org/themes/trophy>에서 마음에 드시는걸로 선택하시면 됩니다.
+<br/>
+<br/>
+### Ruby 설치
+***
+*(여기부터는 Windows에 Tool을 설치가 필요합니다.)*
+
+`Jekyll`은 `Ruby` 기반으로 개발되었다고 합니다. 그래서 Jekyll을 테마를 빌드하려면 Ruby를 사용해야하지요.  
+저도 Ruby를 사용해본적은 없지만;; Ruby를 설치한 후 가이드 대로 따라하면 됩니다.
+
+`GitHub Page에서 공식 지원하는 버전`들은 <https://pages.github.com/versions>에서 확인이 가능합니다.
+
+<https://rubyinstaller.org/downloads> 에서 2.6.5-1 버전을 다운 받습니다. 저는 With Devkit을 다운 받았습니다.  
+*(2019-12-27 현재 Ruby는 2.5.3 버전이 공식 지원 버전입니다. <https://rubyinstaller.org/downloads/archives> 에서 2.5.3 버전을 찾아서 설치하셔도 됩니다.)*
+
+Next만 눌러주시면 설치가 완료됩니다.  
+설치가 완료되면 `커맨드 창`(`실행`(Ctrl + R) -> `cmd`)을 열어,
+
+```
+> ruby -v
+
+ruby 2.6.5p114 (2019-10-01 revision 67812) [x64-mingw32]
+```
+
+를 눌러 버전을 ruby가 동작하는지 확인해주세요.  
+잘 안되면 `윈도우 환경변수`에서 `Path`에 `ruby 폴더가 등록`이 되었는지 확인해주시구요.
+
+`Ruby`는 의존성 관리 도구로 `Gem`을 사용합니다. `Java`의 `Gradle`, `Maven` 비슷한거(?)라고 이해하시면 될거 같아요.  
+위에서 Jekyll 테마를 다운받으셨다면, 그 안에 `Gemfile.lock` 파일이 있습니다. `Gem - Bundler`를 이용하면 `Gemfile.lock`에 정의된 `라이브러리:버전`이 자동으로 설치 됩니다.  
+Bundler가 설치되어 있는지 확인합니다.
+
+```
+> bundle -v
+
+Bundler version 1.17.2
+```
+
+`Bundler`가 없거나 다른 버전을 사용하고 싶으면
+
+```
+> gem install bundler:XXX   # XXX는 버전명
+```
+
+으로 설치가 가능하고, 설치되어 있는 버전 확인은
+
+```
+> gem list
+
+*** LOCAL GEMS ***
+
+addressable (2.7.0, 2.6.0)
+autoprefixer-rails (9.4.8)
+bigdecimal (default: 1.4.1)
+bundler (default: 1.17.2)
+...(생략)
+```
+
+로 확인이 가능합니다.
+
+여튼, `ruby`를 설치한 후 `gem - bundler`가 동작하는 것을 확인했다면 다운받은 테마 폴더 경로에서 `bundle install`을 수행해주세요.
+
+```
+> bundle install
+
+Using public_suffix 3.0.3
+...(생략)
+Using tzinfo-data 1.2019.3
+Bundle complete! 5 Gemfile dependencies, 33 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+```
+
+이제 Local에서 서버를 열어 정적 Page가 열리는지 확인합니다.
+
+```
+> bundle exec jekyll serve
+```
+
+테마마다 다르긴 한데, 바로 `Local 서버`가 열리는 경우가 있고, `ES6 스크립트 실행문제`로 `NodeJS`를 설치하라고 하는 테마가 있습니다.  
+Trophy 테마의 경우 위와 같은 문제가 발생하여 `NodeJS`를 설치해야 합니다.
+
+### NodeJS 설치
+***

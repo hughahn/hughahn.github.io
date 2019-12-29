@@ -2,9 +2,9 @@
  * Base Variables
  */
 $font-header: 'Jua', 'Malgun Gothic';
-$font-body: 'Jua', 'Malgun Gothic';
+$font-body: 'Noto Serif KR', 'Malgun Gothic';
 $font-post: 'Noto Serif KR', 'Malgun Gothic';
-$font-code: 'Consolas', 'Courier Prime';
+$font-code: 'Consolas', 'Courier Prime', 'Noto Serif KR';
 
 $color-alpha: #9f8f68;
 $color-alpha--light: #f5f3ef;
@@ -12,6 +12,8 @@ $color-alpha--light: #f5f3ef;
 $color-black: #0a0a0a;
 $color-grey: #f8f9f9;
 $color-white: #fff;
+
+$color-green: #01B69F;
 
 $mq-xs: 20em;
 $mq-sm: 30em;
@@ -61,7 +63,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 
-  font-family: $font-header;
+  font-family: $font-post;
   line-height: 1.1;
 }
 
@@ -104,7 +106,7 @@ p {
 }
 
 a {
-  color: $color-black;
+  color: $color-green;
   text-decoration: none;
   transition: color 0.4s ease-in-out;
 
@@ -126,7 +128,7 @@ img {
 }
 
 blockquote {
-  font-family: $font-header;
+  font-family: $font-post;
   font-weight: 700;
   font-size: 1.25em;
 
@@ -166,4 +168,28 @@ ol, ul {
 
 code {
   font-family: $font-code;
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #CCC;
+  background-color: #F2F2F2;
+  border-radius: 3px;
+}
+
+pre {
+  background-color: #F2F2F2;
+  border: 1px solid #CCC;
+  font-size: 14px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
 }
