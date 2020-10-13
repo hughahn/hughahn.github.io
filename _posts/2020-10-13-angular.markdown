@@ -1,0 +1,40 @@
+---
+layout: post
+title: "Angular 학습"
+date: 2020-10-13
+categories:
+  - Angular
+description:
+image: /assets/images/background.jpg
+image-sm: /assets/images/background.jpg
+---
+Angular 학습
+
+### Angular
+
+이제 Angular를 학습해보려고 합니다.
+
+잘 될지는 모르겠네요.
+
+```shell script
+$ ls -al
+```
+
+```sh
+$ ls -al
+```
+
+```javascript
+var a = 0;
+let b = 0;
+```
+
+```java
+class HelloWorld {
+} 
+```
+
+---
+
+라인이 잘 되는감
+
