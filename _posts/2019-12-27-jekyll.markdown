@@ -60,7 +60,7 @@ Jekyll 테마는 <http://jekyllthemes.org/themes/trophy>에서 마음에 드시�
 Next만 눌러주시면 설치가 완료됩니다.  
 설치가 완료되면 `커맨드 창`(`실행`(Ctrl + R) -> `cmd`)을 열어,
 
-```
+```sh
 > ruby -v
 
 ruby 2.6.5p114 (2019-10-01 revision 67812) [x64-mingw32]
@@ -73,7 +73,7 @@ ruby 2.6.5p114 (2019-10-01 revision 67812) [x64-mingw32]
 위에서 Jekyll 테마를 다운받으셨다면, 그 안에 `Gemfile.lock` 파일이 있습니다. `Gem - Bundler`를 이용하면 `Gemfile.lock`에 정의된 `라이브러리:버전`이 자동으로 설치 됩니다.  
 Bundler가 설치되어 있는지 확인합니다.
 
-```
+```sh
 > bundle -v
 
 Bundler version 1.17.2
@@ -81,7 +81,7 @@ Bundler version 1.17.2
 
 `Bundler`가 없거나 다른 버전을 사용하고 싶으면
 
-```
+```sh
 > gem install bundler:XXX   # XXX는 버전명
 ```
 
@@ -103,7 +103,7 @@ bundler (default: 1.17.2)
 
 여튼, `ruby`를 설치한 후 `gem - bundler`가 동작하는 것을 확인했다면 다운받은 테마 폴더 경로에서 `bundle install`을 수행해주세요.
 
-```
+```sh
 > bundle install
 
 Using public_suffix 3.0.3
@@ -115,7 +115,7 @@ Use `bundle info [gemname]` to see where a bundled gem is installed.
 
 이제 Local에서 서버를 열어 정적 Page가 열리는지 확인합니다.
 
-```
+```sh
 > bundle exec jekyll serve
 ```
 
